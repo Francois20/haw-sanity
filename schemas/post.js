@@ -1,16 +1,17 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
-export default defineType({
+export const post = defineType ({
   name: 'post',
   title: 'Post',
   type: 'document',
+  i18n: true,
   fields: [
-    defineField({
+    defineField ({
       name: 'title',
       title: 'Title',
       type: 'string',
     }),
-    defineField({
+    defineField ({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -19,13 +20,13 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
+    defineField ({
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
     }),
-    defineField({
+    defineField ({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -33,18 +34,18 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
+    defineField ({
       name: 'categories',
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
-    defineField({
+    defineField ({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
     }),
-    defineField({
+    defineField ({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
