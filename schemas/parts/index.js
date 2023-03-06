@@ -7,8 +7,11 @@ import {category} from './category'
 import {navigation} from './navigation'
 import {footer} from './footer'
 import {link} from './link'
+import {locales} from './locales'
 import {locale} from './locale'
 import {login} from './login'
+import {portableText} from './portableText'
+import {imageAlt} from './imageAlt'
 
 export const parts = [
   target,
@@ -21,5 +24,8 @@ export const parts = [
   footer,
   link,
   locale,
+  locales,
   login,
+  portableText,
+  imageAlt,
 ]

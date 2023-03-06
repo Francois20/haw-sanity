@@ -3,13 +3,8 @@ import {defineField, defineType} from 'sanity'
 export const login = defineType({
   name: 'login',
   type: 'object',
-  title: 'Login',
+  title: 'login',
   fields: [
-    defineField({
-      name: 'name',
-      type: 'string',
-      title: 'Name',
-    }),
     defineField({
       name: 'url',
       type: 'url',

@@ -1,10 +1,10 @@
 import { defineField, defineType } from "sanity";
 
 
-export const textWithImage = defineType ({
-  name: "textWithImage",
+export const textImageButton = defineType ({
+  name: "textImageButton",
   type: "object",
-  title: "Text with Image",
+  title: "Text Image Button",
   fields: [
     defineField ({
       name: 'heading',
@@ -12,14 +12,14 @@ export const textWithImage = defineType ({
       title: 'Heading'
     }),
     defineField ({
-      name: 'tagline',
-      type: 'string',
-      title: 'Tagline'
+      name: 'text',
+      type: 'portableText',
+      title: 'Text'
     }),
     defineField ({
-      name: 'excerpt',
-      type: 'text',
-      title: 'Excerpt'
+      name: 'link',
+      type: 'link',
+      title: 'Call to action'
     }),
     defineField ({
       name: 'image',
@@ -32,7 +32,8 @@ export const textWithImage = defineType ({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative text'
+          title: 'Alternative text',
+          validation: (Rule) => Rule.required(),
         }
       ]
     })

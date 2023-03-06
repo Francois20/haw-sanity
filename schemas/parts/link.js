@@ -6,14 +6,14 @@ export const link = defineType({
   title: 'Link',
   fields: [
     defineField({
-      name: 'linkText',
+      name: 'title',
       type: 'string',
-      title: 'Link Text',
+      title: 'Title',
     }),
     defineField({
-      name: 'linkType',
+      name: 'type',
       type: 'string',
-      title: 'Link type',
+      title: 'Type',
       options: {
         list: [
           {title: 'Internal', value: 'internal'},
@@ -26,13 +26,13 @@ export const link = defineType({
       name: 'externalLink',
       type: 'url',
       title: 'URL',
-      hidden: ({parent, value}) => parent?.linkType && parent?.linkType === 'internal',
+      hidden: ({parent, value}) => parent?.type && parent?.type === 'internal',
     }),
     defineField({
       name: 'internalLink',
       type: 'reference',
       to: [{type: 'page'}, {type: 'post'}],
-      hidden: ({parent, value}) => parent?.linkType && parent?.linkType === 'external',
+      hidden: ({parent, value}) => parent?.type && parent?.type === 'external',
     }),
   ],
 })

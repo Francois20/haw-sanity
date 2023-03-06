@@ -8,7 +8,6 @@ import {deskStructure} from './deskStructure'
 export default defineConfig({
   name: 'default',
   title: 'HAWStudio',
-
   projectId: 'szdcwwtw',
   dataset: 'production',
 

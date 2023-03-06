@@ -1,11 +1,7 @@
-import { hero } from "./hero";
-import { textWithImage } from './textWithImage.js'
-import { video } from './video'
-import { form } from './form'
+import {hero} from './hero'
+import {textImageButton} from './textImageButton.js'
+import {video} from './video'
+import {form} from './form'
+import {logos} from './logos'
 
-export const blocks = [
-  hero,
-  textWithImage,
-  video,
-  form,
-]
+export const blocks = [hero, textImageButton, video, form, logos]

@@ -6,19 +6,28 @@ export const locale = defineType({
   title: 'Locale',
   fields: [
     defineField({
-      name: 'name',
+      name: 'title',
       type: 'string',
-      title: 'Name',
+      title: 'Title',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'code',
+      type: 'string',
+      title: 'Code',
+      readOnly: true,
     }),
     defineField({
       name: 'image',
       type: 'image',
       title: 'Image',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
+          validation: (Rule) => Rule.required(),
         },
       ],
     }),

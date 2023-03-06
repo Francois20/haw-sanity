@@ -11,9 +11,9 @@ export const cta = defineType ({
       title: 'Link Text'
     }),
     defineField ({
-      name: 'url',
-      type: 'url',
-      title: 'URL'
+      name: 'link',
+      type: 'link',
+      title: 'Link'
     })
   ]
 })

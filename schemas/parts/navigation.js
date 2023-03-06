@@ -19,12 +19,11 @@ export const navigation = defineType({
     defineField({
       name: 'locales',
       title: 'Locales',
-      type: 'array',
-      of: [{type: 'link'}],
+      type: 'locales',
     }),
     defineField({
       name: 'login',
-      title: 'Login',
+      title: 'Admin login',
       type: 'login',
     }),
   ],

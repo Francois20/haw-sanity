@@ -1,26 +1,39 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
-export const hero = defineType ({
-  name: "hero",
-  type: "object",
-  title: "Hero",
+export const hero = defineType({
+  name: 'hero',
+  type: 'object',
+  title: 'Hero',
   fields: [
-    defineField ({
+    defineField({
+      name: 'orientation',
+      title: 'Orientation',
+      type: 'string',
+      initialValue: 'right',
+      options: {
+        list: [
+          {title: 'Left', value: 'left'},
+          {title: 'Right', value: 'right'},
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
       name: 'heading',
       type: 'string',
-      title: 'Heading'
+      title: 'Heading',
     }),
-    defineField ({
+    defineField({
       name: 'tagline',
       type: 'text',
-      title: 'Tagline'
+      title: 'Tagline',
     }),
-    defineField ({
-      name: 'cta',
-      type: 'callToAction',
-      title: 'Call To Action'
+    defineField({
+      name: 'link',
+      type: 'link',
+      title: 'Call To Action',
     }),
-    defineField ({
+    defineField({
       name: 'image',
       type: 'image',
       title: 'Image',
@@ -31,9 +44,26 @@ export const hero = defineType ({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative text'
-        }
-      ]
-    })
-  ]
+          title: 'Alternative text',
+        },
+      ],
+    }),
+    defineField({
+      name: 'backgroundColor',
+      title: 'Background color',
+      type: 'string',
+      initialValue: '#4497D3',
+      options: {
+        list: [
+          {title: 'Blue', value: '#4497D3'},
+          {title: 'Orange', value: '#EC6726'},
+          {title: 'Pink', value: '#E8378C'},
+          {title: 'Marine', value: '#003553'},
+          {title: 'Turqouise', value: '#48B9B2'},
+          {title: 'Purple', value: '#9185BE'},
+        ],
+        layout: 'radio',
+      },
+    }),
+  ],
 })

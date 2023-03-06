@@ -9,6 +9,11 @@ export const seo = defineType({
   ],
   fields: [
     defineField({
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+    }),
+    defineField({
       title: 'Title',
       name: 'title',
       type: 'string',
