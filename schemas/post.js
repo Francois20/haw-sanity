@@ -1,17 +1,18 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
-export const post = defineType ({
+export const post = defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Posts',
   type: 'document',
   i18n: true,
   fields: [
-    defineField ({
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -19,36 +20,44 @@ export const post = defineType ({
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'imageAlt',
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: {type: 'category'},
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'portableText',
     }),
   ],
 
@@ -56,7 +65,7 @@ export const post = defineType ({
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'image',
     },
     prepare(selection) {
       const {author} = selection

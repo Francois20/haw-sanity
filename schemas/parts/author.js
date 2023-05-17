@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const author = defineType({
   name: 'author',
-  title: 'Author',
+  title: 'Authors',
   type: 'document',
   fields: [
     defineField({
@@ -13,10 +13,7 @@ export const author = defineType({
     defineField({
       name: 'image',
       title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'imageAlt',
     }),
   ],
   preview: {

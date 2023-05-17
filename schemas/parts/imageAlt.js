@@ -2,8 +2,11 @@ import {defineType} from 'sanity'
 
 export const imageAlt = defineType({
   name: 'imageAlt',
-  type: 'document',
+  type: 'image',
   title: 'Image',
+  options: {
+    hotspot: true,
+  },
   fields: [
     {
       name: 'alt',

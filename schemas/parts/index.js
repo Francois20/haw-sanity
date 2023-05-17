@@ -5,13 +5,18 @@ import {blockContent} from './blockContent'
 import {author} from './author'
 import {category} from './category'
 import {navigation} from './navigation'
-import {footer} from './footer'
 import {link} from './link'
 import {locales} from './locales'
 import {locale} from './locale'
 import {login} from './login'
 import {portableText} from './portableText'
 import {imageAlt} from './imageAlt'
+import {paragraph} from './paragraph'
+import {usp} from './usp'
+import {soMeLink} from './soMeLink'
+import {price} from './price'
+import {colorPicker} from './colorPicker'
+import {customerStory} from './customerStory'
 
 export const parts = [
   target,
@@ -21,11 +26,16 @@ export const parts = [
   author,
   category,
   navigation,
-  footer,
   link,
   locale,
   locales,
   login,
   portableText,
   imageAlt,
+  paragraph,
+  usp,
+  soMeLink,
+  price,
+  colorPicker,
+  customerStory,
 ]

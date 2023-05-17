@@ -1,0 +1,52 @@
+import {defineField, defineType} from 'sanity'
+
+export const pricePlan = defineType({
+  name: 'pricePlan',
+  type: 'document',
+  title: 'Price plans',
+  fields: [
+    defineField({
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'description',
+      type: 'string',
+      title: 'Description',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'prices',
+      type: 'array',
+      title: 'Prices',
+      of: [
+        {
+          type: 'price',
+        },
+      ],
+    }),
+    defineField({
+      name: 'features',
+      type: 'array',
+      title: 'Features',
+      of: [
+        {
+          name: 'feature',
+          type: 'string',
+        },
+      ],
+    }),
+    defineField({
+      name: 'link',
+      type: 'link',
+      title: 'CTA',
+    }),
+    defineField({
+      name: 'color',
+      type: 'colorPicker',
+      title: 'Color',
+    }),
+  ],
+})

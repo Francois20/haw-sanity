@@ -22,11 +22,13 @@ export const hero = defineType({
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'tagline',
       type: 'text',
       title: 'Tagline',
+      rows: 4,
     }),
     defineField({
       name: 'link',
@@ -47,6 +49,7 @@ export const hero = defineType({
           title: 'Alternative text',
         },
       ],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'backgroundColor',
@@ -66,4 +69,9 @@ export const hero = defineType({
       },
     }),
   ],
+  preview: {
+    prepare: () => {
+      return {title: 'Hero'}
+    },
+  },
 })

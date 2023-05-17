@@ -15,7 +15,6 @@ export const locale = defineType({
       name: 'code',
       type: 'string',
       title: 'Code',
-      readOnly: true,
     }),
     defineField({
       name: 'image',

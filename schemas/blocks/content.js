@@ -1,27 +1,22 @@
 import { defineField, defineType } from "sanity";
 
-
-export const textImageButton = defineType ({
-  name: "textImageButton",
+export const content = defineType ({
+  name: "content",
   type: "object",
-  title: "Text Image Button",
+  title: "Content",
   fields: [
     defineField ({
-      name: 'heading',
+      name: 'title',
       type: 'string',
-      title: 'Heading'
+      title: 'Title',
+      validation: (Rule) => Rule.required(),
     }),
     defineField ({
       name: 'text',
       type: 'portableText',
       title: 'Text'
     }),
-    defineField ({
-      name: 'link',
-      type: 'link',
-      title: 'Call to action'
-    }),
-    defineField ({
+    defineField({
       name: 'image',
       type: 'image',
       title: 'Image',
@@ -33,14 +28,19 @@ export const textImageButton = defineType ({
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
-          validation: (Rule) => Rule.required(),
-        }
-      ]
-    })
+        },
+      ],
+    }),
+    defineField({
+      name: 'paragraphs',
+      title: 'Paragraphs',
+      type: 'array',
+      of: [{type: 'paragraph'}],
+    }),
   ],
   preview: {
     prepare: () => {
-      return {title: 'Text image button'}
+      return {title: 'Content'}
     },
   },
 })
