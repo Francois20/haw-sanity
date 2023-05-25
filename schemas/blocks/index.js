@@ -13,6 +13,7 @@ import {content} from './content'
 import {usps} from './usps'
 import {pricing} from './pricing'
 import {faq} from './faq'
+import {contentMulti} from './contentMulti'
 
 export const blocks = [
   hero,
@@ -30,4 +31,5 @@ export const blocks = [
   usps,
   pricing,
   faq,
+  contentMulti,
 ]

@@ -1,29 +1,45 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
-export const form = defineType ({
-  name: "form",
-  type: "object",
-  title: "Form",
+export const form = defineType({
+  name: 'form',
+  type: 'object',
+  title: 'Form',
   fields: [
-    defineField ({
+    defineField({
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    }),
+    defineField({
+      name: 'text',
+      type: 'portableText',
+      title: 'Text',
+    }),
+    defineField({
       name: 'nameLabel',
       type: 'string',
-      title: 'Name Label'
+      title: 'Name Label',
     }),
-    defineField ({
+    defineField({
       name: 'emailLabel',
-      type: 'email',
-      title: 'Email Label'
+      type: 'string',
+      title: 'Email Label',
     }),
-    defineField ({
-      name: 'textLabel',
-      type: 'text',
-      title: 'Text Label'
+    defineField({
+      name: 'messageLabel',
+      type: 'string',
+      title: 'Message Label',
     }),
-    defineField ({
+    defineField({
       name: 'submitText',
-      type: 'text',
-      title: 'Submit Text'
+      type: 'string',
+      title: 'Submit Text',
+      validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
+  preview: {
+    prepare: () => {
+      return {title: 'Form'}
+    },
+  },
 })

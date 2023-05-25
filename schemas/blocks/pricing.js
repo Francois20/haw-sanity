@@ -1,5 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import {pricePlan} from '../pricePlan'
 
 export const pricing = defineType({
   name: 'pricing',

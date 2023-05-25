@@ -37,6 +37,7 @@ export const page = defineType({
         {type: 'pricing'},
         {type: 'customerStories'},
         {type: 'faq'},
+        {type: 'contentMulti'},
       ],
     }),
   ],
