@@ -1,20 +1,20 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
-export const content = defineType ({
-  name: "content",
-  type: "object",
-  title: "Content",
+export const contentExtended = defineType({
+  name: 'contentExtended',
+  type: 'object',
+  title: 'Content Extended',
   fields: [
-    defineField ({
+    defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
       validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'text',
       type: 'portableText',
-      title: 'Text'
+      title: 'Text',
     }),
     defineField({
       name: 'image',
@@ -40,7 +40,7 @@ export const content = defineType ({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Content'}
+      return {title: 'Content Extended'}
     },
   },
 })
