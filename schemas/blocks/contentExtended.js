@@ -6,6 +6,17 @@ export const contentExtended = defineType({
   title: 'Content Extended',
   fields: [
     defineField({
+      name: 'reversed',
+      type: 'boolean',
+      title: 'Reversed',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'tag',
+      type: 'string',
+      title: 'Tag',
+    }),
+    defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
@@ -15,21 +26,13 @@ export const contentExtended = defineType({
       name: 'text',
       type: 'portableText',
       title: 'Text',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
-      type: 'image',
+      type: 'imageAlt',
       title: 'Image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-        },
-      ],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'paragraphs',

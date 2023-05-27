@@ -6,6 +6,7 @@ import {blocks} from './blocks'
 import {footer} from './footer'
 import {references} from './references'
 import {pricePlan} from './pricePlan'
+import {postSettings} from './postSettings'
 
 export const schemaTypes = [
   ...parts,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   page,
   footer,
   siteSettings,
+  postSettings,
 ]

@@ -9,6 +9,7 @@ export const siteSettings = defineType({
     {name: 'startPage', title: 'Start page', default: true},
     {name: 'navigation', title: 'Navigation'},
     {name: 'footer', title: 'Footer'},
+    {name: 'post', title: 'Post'},
   ],
   fields: [
     defineField({
@@ -30,6 +31,12 @@ export const siteSettings = defineType({
       title: 'Footer',
       type: 'footer',
       group: 'footer',
+    }),
+    defineField({
+      name: 'post',
+      title: 'Post settings',
+      type: 'postSettings',
+      group: 'post',
     }),
   ],
 })

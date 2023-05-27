@@ -6,14 +6,21 @@ export const contentBasic = defineType({
   title: 'Content Basic',
   fields: [
     defineField({
+      name: 'tag',
+      type: 'string',
+      title: 'Tag',
+    }),
+    defineField({
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       type: 'portableText',
       title: 'Text',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'link',
@@ -22,19 +29,9 @@ export const contentBasic = defineType({
     }),
     defineField({
       name: 'image',
-      type: 'image',
+      type: 'imageAlt',
       title: 'Image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

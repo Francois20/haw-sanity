@@ -26,6 +26,7 @@ export const page = defineType({
         {type: 'contentBasic'},
         {type: 'contentExtended'},
         {type: 'contentMulti'},
+        {type: 'freeText'},
         {type: 'form'},
         {type: 'video'},
         {type: 'logos'},
