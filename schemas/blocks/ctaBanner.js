@@ -1,9 +1,11 @@
 import { defineField, defineType } from "sanity";
+import {StarIcon} from '@sanity/icons'
 
 export const ctaBanner = defineType ({
   name: "ctaBanner",
   type: "object",
   title: "CTA Banner",
+  icon: StarIcon,
   fields: [
     defineField ({
       name: 'text1',
@@ -25,7 +27,10 @@ export const ctaBanner = defineType ({
   ],
   preview: {
     prepare: () => {
-      return {title: 'CTA Banner'}
+      return {
+        title: 'CTA Banner',
+        media: StarIcon
+      }
     },
   },
 })

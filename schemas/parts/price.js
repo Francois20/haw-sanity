@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {UsersIcon} from '@sanity/icons'
 
 export const price = defineType({
   name: 'price',
@@ -31,6 +32,7 @@ export const price = defineType({
       const {name} = selection
       return {
         title: name,
+        media: UsersIcon,
       }
     },
   },

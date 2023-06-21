@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {CreditCardIcon} from '@sanity/icons'
 
 export const pricing = defineType({
   name: 'pricing',
   type: 'object',
   title: 'Pricing',
+  icon: CreditCardIcon,
   fields: [
     defineField({
       name: 'titleEmployees',
@@ -41,7 +43,10 @@ export const pricing = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Pricing'}
+      return {
+        title: 'Pricing',
+        media: CreditCardIcon
+      }
     },
   },
 })

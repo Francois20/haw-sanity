@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {DocumentIcon} from '@sanity/icons'
 
 export const posts = defineType({
   name: 'posts',
   type: 'object',
   title: 'Posts',
+  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'postLink',
@@ -23,7 +25,10 @@ export const posts = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Posts'}
+      return {
+        title: 'Posts',
+        media: DocumentIcon,
+      }
     },
   },
 })

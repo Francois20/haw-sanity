@@ -1,9 +1,12 @@
 import {defineField, defineType} from 'sanity'
+import {CreditCardIcon} from '@sanity/icons'
 
 export const pricePlan = defineType({
   name: 'pricePlan',
   type: 'document',
   title: 'Price plans',
+  icon: CreditCardIcon,
+  i18n: true,
   fields: [
     defineField({
       name: 'title',

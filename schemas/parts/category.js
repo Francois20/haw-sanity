@@ -8,7 +8,18 @@ export const category = defineType ({
     defineField ({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: title,
+      }
+    },
+  },
 })

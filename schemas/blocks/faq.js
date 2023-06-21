@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {UnknownIcon} from '@sanity/icons'
 
 export const faq = defineType({
   name: 'faq',
   type: 'object',
   title: 'FAQ',
+  icon: UnknownIcon,
   fields: [
     defineField({
       name: 'title',
@@ -61,7 +63,7 @@ export const faq = defineType({
                   ],
                   preview: {
                     select: {
-                      name: 'tag.title',
+                      name: 'tag.title.en',
                     },
                     prepare(selection) {
                       const {name} = selection
@@ -85,7 +87,10 @@ export const faq = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'FAQ'}
+      return {
+        title: 'FAQ',
+        media: UnknownIcon,
+      }
     },
   },
 })

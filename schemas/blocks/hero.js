@@ -1,15 +1,17 @@
 import {defineField, defineType} from 'sanity'
+import {ImageIcon} from '@sanity/icons'
 
 export const hero = defineType({
   name: 'hero',
   type: 'object',
   title: 'Hero',
+  icon: ImageIcon,
   fields: [
     defineField({
       name: 'orientation',
       title: 'Orientation',
       type: 'string',
-      initialValue: 'right',
+      initialValue: 'left',
       options: {
         list: [
           {title: 'Left', value: 'left'},
@@ -71,7 +73,10 @@ export const hero = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Hero'}
+      return {
+        title: 'Hero',
+        media: ImageIcon,
+      }
     },
   },
 })

@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 export const colorPicker = defineType({
   name: 'colorPicker',
   title: 'Color picker',
-  type: 'document',
+  type: 'object',
   fields: [
     defineField({
       name: 'value',

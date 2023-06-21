@@ -1,6 +1,5 @@
 import {hero} from './hero'
 import {contentBasic} from './contentBasic.js'
-import {video} from './video'
 import {form} from './form'
 import {logos} from './logos'
 import {posts} from './posts'
@@ -15,11 +14,11 @@ import {pricing} from './pricing'
 import {faq} from './faq'
 import {contentMulti} from './contentMulti'
 import {freeText} from './freeText'
+import {pipedriveForm} from './pipedriveForm'
 
 export const blocks = [
   hero,
   contentBasic,
-  video,
   form,
   logos,
   posts,
@@ -34,4 +33,5 @@ export const blocks = [
   faq,
   contentMulti,
   freeText,
+  pipedriveForm,
 ]

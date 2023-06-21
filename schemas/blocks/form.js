@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {EnvelopeIcon} from '@sanity/icons'
 
 export const form = defineType({
   name: 'form',
   type: 'object',
   title: 'Form',
+  icon: EnvelopeIcon,
   fields: [
     defineField({
       name: 'title',
@@ -39,7 +41,10 @@ export const form = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Form'}
+      return {
+        title: 'Contact Form',
+        media: EnvelopeIcon
+      }
     },
   },
 })

@@ -8,8 +8,19 @@ export const faqTag = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: title,
+      }
+    },
+  },
 })

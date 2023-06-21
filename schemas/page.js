@@ -28,7 +28,7 @@ export const page = defineType({
         {type: 'contentMulti'},
         {type: 'freeText'},
         {type: 'form'},
-        {type: 'video'},
+        {type: 'pipedriveForm'},
         {type: 'logos'},
         {type: 'posts'},
         {type: 'latestPost'},

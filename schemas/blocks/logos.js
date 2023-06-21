@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {EllipsisHorizontalIcon} from '@sanity/icons'
 
 export const logos = defineType({
   name: 'logos',
   type: 'object',
   title: 'Logos',
+  icon: EllipsisHorizontalIcon,
   fields: [
     defineField({
       name: 'text',
@@ -18,15 +20,18 @@ export const logos = defineType({
       validation: (Rule) =>
         Rule.custom((value) => {
           if (value && value?.length > 8) {
-            return 'You can insert only 8 logos.';
+            return 'You can insert only 8 logos.'
           }
-          return true;
+          return true
         }),
     }),
   ],
   preview: {
     prepare: () => {
-      return {title: 'Logos'}
+      return {
+        title: 'Logos',
+        media: EllipsisHorizontalIcon,
+      }
     },
   },
 })

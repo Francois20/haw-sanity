@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {BlockContentIcon} from '@sanity/icons'
 
 export const freeText = defineType({
   name: 'freeText',
   type: 'object',
   title: 'Free Text',
+  icon: BlockContentIcon,
   fields: [
     defineField({
       name: 'text',
@@ -14,7 +16,10 @@ export const freeText = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Free Text'}
+      return {
+        title: 'Free Text',
+        media: BlockContentIcon,
+      }
     },
   },
 })

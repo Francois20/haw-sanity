@@ -7,9 +7,10 @@ export const siteSettings = defineType({
   i18n: true,
   groups: [
     {name: 'startPage', title: 'Start page', default: true},
+    {name: 'post', title: 'Post page'},
+    {name: 'error', title: 'Error page'},
     {name: 'navigation', title: 'Navigation'},
     {name: 'footer', title: 'Footer'},
-    {name: 'post', title: 'Post'},
   ],
   fields: [
     defineField({
@@ -34,9 +35,22 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: 'post',
-      title: 'Post settings',
+      title: 'Post page',
       type: 'postSettings',
       group: 'post',
     }),
+    defineField({
+      name: 'error',
+      title: 'Error page',
+      type: 'error',
+      group: 'error',
+    }),
   ],
+  preview: {
+    prepare: () => {
+      return {
+        title: 'Site Settings',
+      }
+    },
+  },
 })

@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {DocumentsIcon} from '@sanity/icons'
 
 export const twoLatestPosts = defineType({
   name: 'twoLatestPosts',
   type: 'object',
   title: '2 Latest posts',
+  icon: DocumentsIcon,
   fields: [
     defineField({
       name: 'description',
@@ -31,7 +33,10 @@ export const twoLatestPosts = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: '2 Latest blog posts'}
+      return {
+        title: '2 Latest blog post',
+        media: DocumentsIcon,
+      }
     },
   },
 })

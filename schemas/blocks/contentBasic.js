@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {SquareIcon} from '@sanity/icons'
 
 export const contentBasic = defineType({
   name: 'contentBasic',
   type: 'object',
   title: 'Content Basic',
+  icon: SquareIcon,
   fields: [
     defineField({
       name: 'tag',
@@ -36,7 +38,10 @@ export const contentBasic = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Content Basic'}
+      return {
+        title: 'Content Basic',
+        media: SquareIcon,
+      }
     },
   },
 })

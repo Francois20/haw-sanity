@@ -33,5 +33,11 @@ export const customerStory = defineType ({
       title: 'Text',
       validation: (Rule) => Rule.required()
     }),
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'image',
+    },
+  },
 })

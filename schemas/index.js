@@ -7,6 +7,7 @@ import {footer} from './footer'
 import {references} from './references'
 import {pricePlan} from './pricePlan'
 import {postSettings} from './postSettings'
+import {error} from './error'
 
 export const schemaTypes = [
   ...parts,
@@ -16,6 +17,7 @@ export const schemaTypes = [
   pricePlan,
   page,
   footer,
+  error,
   siteSettings,
   postSettings,
 ]

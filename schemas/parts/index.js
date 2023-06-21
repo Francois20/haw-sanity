@@ -17,6 +17,7 @@ import {soMeLink} from './soMeLink'
 import {price} from './price'
 import {colorPicker} from './colorPicker'
 import {customerStory} from './customerStory'
+import {localeString} from './localeString'
 
 export const parts = [
   target,
@@ -38,4 +39,5 @@ export const parts = [
   price,
   colorPicker,
   customerStory,
+  localeString,
 ]

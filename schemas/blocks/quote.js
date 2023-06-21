@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {CommentIcon} from '@sanity/icons'
 
 export const quote = defineType({
   name: 'quote',
   type: 'object',
   title: 'Quote',
+  icon: CommentIcon,
   fields: [
     defineField({
       name: 'text',
@@ -23,7 +25,10 @@ export const quote = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Quote'}
+      return {
+        title: 'Quote',
+        media: CommentIcon
+      }
     },
   },
 })

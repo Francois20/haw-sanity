@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {DashboardIcon} from '@sanity/icons'
 
 export const contentMulti = defineType({
   name: 'contentMulti',
   type: 'object',
   title: 'Content Multi',
+  icon: DashboardIcon,
   fields: [
     defineField({
       name: 'items',
@@ -50,7 +52,10 @@ export const contentMulti = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Content Multi'}
+      return {
+        title: 'Content Multi',
+        media: DashboardIcon,
+      }
     },
   },
 })

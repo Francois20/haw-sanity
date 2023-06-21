@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {SplitHorizontalIcon} from '@sanity/icons'
 
 export const contentExtended = defineType({
   name: 'contentExtended',
   type: 'object',
   title: 'Content Extended',
+  icon: SplitHorizontalIcon,
   fields: [
     defineField({
       name: 'reversed',
@@ -43,7 +45,10 @@ export const contentExtended = defineType({
   ],
   preview: {
     prepare: () => {
-      return {title: 'Content Extended'}
+      return {
+        title: 'Content Extended',
+        media: SplitHorizontalIcon,
+      }
     },
   },
 })
