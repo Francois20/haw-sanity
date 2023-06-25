@@ -5,21 +5,22 @@ export const post = defineType({
   title: 'Posts',
   type: 'document',
   i18n: true,
+  groups: [
+    {name: 'content', title: 'Content', default: true},
+    {name: 'seo', title: 'SEO'},
+  ],
   fields: [
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+      group: 'seo',
+    }),
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -27,12 +28,14 @@ export const post = defineType({
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'imageAlt',
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -40,24 +43,28 @@ export const post = defineType({
       title: 'Category',
       type: 'reference',
       to: {type: 'category'},
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'date',
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'summary',
       title: 'Summary',
       type: 'text',
+      group: 'content',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'portableText',
+      group: 'content',
     }),
   ],
 

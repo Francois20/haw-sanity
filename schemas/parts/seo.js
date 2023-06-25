@@ -10,20 +10,24 @@ export const seo = defineType({
       title: 'Slug',
       name: 'slug',
       type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Title',
       name: 'title',
       type: 'string',
-      validation: (Rule) => Rule.max(60).warning(`A title shouldn't be more than 60 characters`),
+      validation: (Rule) => Rule.max(60).warning(`A title shouldn't be longer than 60 characters`),
     }),
     defineField({
       title: 'Description',
       name: 'description',
       type: 'string',
       validation: (Rule) =>
-        Rule.max(150).warning('A longer description will be truncated by search engines.'),
+        Rule.max(150).warning(`A description shouldn't be longer than 150 characters`),
     }),
     defineField({
       title: 'og:title',
