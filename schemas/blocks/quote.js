@@ -18,16 +18,26 @@ export const quote = defineType({
       title: 'Name',
     }),
     defineField({
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    }),
+    defineField({
       name: 'company',
       type: 'string',
       title: 'Company',
+    }),
+    defineField({
+      name: 'image',
+      type: 'imageAlt',
+      title: 'Image',
     }),
   ],
   preview: {
     prepare: () => {
       return {
         title: 'Quote',
-        media: CommentIcon
+        media: CommentIcon,
       }
     },
   },
