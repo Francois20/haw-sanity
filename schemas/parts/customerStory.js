@@ -1,37 +1,43 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
-export const customerStory = defineType ({
-  name: "customerStory",
-  type: "object",
-  title: "Customer Story",
+export const customerStory = defineType({
+  name: 'customerStory',
+  type: 'object',
+  title: 'Customer Story',
   fields: [
-    defineField ({
+    defineField({
       name: 'logo',
       type: 'imageAlt',
-      title: 'Logo'
+      title: 'Logo',
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'image',
       type: 'imageAlt',
       title: 'Image',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'name',
       type: 'string',
       title: 'Name',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
-    defineField ({
+    defineField({
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     }),
-    defineField ({
+    defineField({
       name: 'text',
-      type: 'text',
+      type: 'portableText',
       title: 'Text',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'link',
+      type: 'link',
+      title: 'Link',
     }),
   ],
   preview: {

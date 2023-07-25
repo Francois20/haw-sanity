@@ -46,7 +46,7 @@ export const seo = defineType({
         Rule.max(300).warning('A longer description will be truncated by search engines.'),
     }),
     defineField({
-      title: 'og:image',
+      title: 'og:image 1200:630',
       name: 'ogImage',
       type: 'image',
       fieldset: 'og',
