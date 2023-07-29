@@ -17,13 +17,13 @@ export const seo = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      title: 'Title',
+      title: 'Meta title',
       name: 'title',
       type: 'string',
       validation: (Rule) => Rule.max(60).warning(`A title shouldn't be longer than 60 characters`),
     }),
     defineField({
-      title: 'Description',
+      title: 'Meta description',
       name: 'description',
       type: 'string',
       validation: (Rule) =>
