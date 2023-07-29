@@ -63,7 +63,6 @@ export const hero = defineType({
           {title: 'Blue', value: '#4497D3'},
           {title: 'Orange', value: '#EC6726'},
           {title: 'Pink', value: '#E8378C'},
-          {title: 'Marine', value: '#003553'},
           {title: 'Turqouise', value: '#48B9B2'},
           {title: 'Purple', value: '#9185BE'},
         ],

@@ -14,13 +14,13 @@ export const logos = defineType({
     }),
     defineField({
       name: 'images',
-      title: 'Images (maximum 8)',
+      title: 'Images (maximum 6)',
       type: 'array',
       of: [{type: 'imageAlt'}],
       validation: (Rule) =>
         Rule.custom((value) => {
-          if (value && value?.length > 8) {
-            return 'You can insert only 8 logos.'
+          if (value && value?.length > 6) {
+            return 'You can insert only 6 logos.'
           }
           return true
         }),
