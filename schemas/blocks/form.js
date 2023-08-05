@@ -35,7 +35,19 @@ export const form = defineType({
     defineField({
       name: 'submitText',
       type: 'string',
-      title: 'Submit Text',
+      title: 'Submit Label',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'confirmationTitle',
+      type: 'string',
+      title: 'Confirmation title',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'confirmationText',
+      type: 'string',
+      title: 'Confirmation text',
       validation: (Rule) => Rule.required(),
     }),
   ],
@@ -43,7 +55,7 @@ export const form = defineType({
     prepare: () => {
       return {
         title: 'Contact Form',
-        media: EnvelopeIcon
+        media: EnvelopeIcon,
       }
     },
   },
