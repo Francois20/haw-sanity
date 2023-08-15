@@ -35,9 +35,15 @@ export const customerStory = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'link',
-      type: 'link',
-      title: 'Link',
+      name: 'internalLink',
+      title: 'Link to post',
+      type: 'reference',
+      to: [{type: 'post'}],
+    }),
+    defineField({
+      name: 'linkText',
+      type: 'string',
+      title: 'Link text',
     }),
   ],
   preview: {
