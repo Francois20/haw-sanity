@@ -18,12 +18,6 @@ export const faq = defineType({
       title: 'Search placeholder',
     }),
     defineField({
-      name: 'searchButton',
-      type: 'string',
-      title: 'Search button',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: 'faqList',
       type: 'array',
       title: 'Questions and answers',
