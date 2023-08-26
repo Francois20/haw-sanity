@@ -8,11 +8,6 @@ export const logos = defineType({
   icon: EllipsisHorizontalIcon,
   fields: [
     defineField({
-      name: 'text',
-      type: 'string',
-      title: 'Text',
-    }),
-    defineField({
       name: 'images',
       title: 'Images (maximum 6)',
       type: 'array',
