@@ -36,7 +36,7 @@ export const customerStory = defineType({
     }),
     defineField({
       name: 'internalLink',
-      title: 'Link to post',
+      title: 'Link text',
       type: 'reference',
       to: [{type: 'post'}],
     }),
