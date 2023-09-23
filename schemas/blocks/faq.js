@@ -44,6 +44,14 @@ export const faq = defineType({
               name: 'tags',
               type: 'array',
               title: 'Tags',
+              validation: (Rule) =>
+                Rule.custom((content) => {
+                  return content.length > 0
+                    ? true
+                    : {
+                        message: 'A FAQ item needs at least one tag',
+                      }
+                }),
               of: [
                 {
                   type: 'object',
